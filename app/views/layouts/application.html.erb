@@ -1,5 +1,14 @@
-<h1>トップ画面</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YourApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
 
-
-<%= link_to "サインアップ", new_user_registration_path %> | 
-<%= link_to "ログイン", new_user_session_path %>
+  <body>
+    <%= yield %> 
+  </body>
+</html>

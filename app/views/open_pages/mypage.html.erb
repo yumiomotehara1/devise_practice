@@ -1,13 +1,41 @@
+<style>
+  /* テーブル全体の枠線とレイアウトの設定 */
+  table {
+    border-collapse: collapse; /* 枠線を1本に重ねる */
+    width: 500px;             
+    margin-bottom: 15px;       
+  }
+
+  /* セル（マス目）全体の共通設定 */
+  table tr th, table tr td {
+    border: 1px solid #000;    
+    padding: 6px 10px;         
+  }
+
+  /* 左側の列（1番目のセル：名前・メールアドレス）の設定 */
+  table tr th:first-child, table tr td:first-child {
+    background-color: #f2f2f2 !important;
+    text-align: center !important;       
+    width: 120px;                         
+  }
+
+  /* 右側の列（2番目のセル：実際のユーザー情報）の設定 */
+  table tr td:last-child {
+    text-align: left !important;          /* テストアカウントなどの情報は左寄せにする */
+  }
+</style>
+
+
 <h2>マイページ画面</h2>
 
-<table border="1" style="border-collapse: collapse; width: 100%; max-width: 500px; text-align: left;">
+<table>
   <tr>
-    <th style="background-color: #f2f2f2; width: 30%; padding: 5px;">名前</th>
-    <td style="padding: 5px;"><%= current_user.name %></td>
+    <th>名前</th>
+    <td><%= current_user.name %></td>
   </tr>
   <tr>
-    <th style="background-color: #f2f2f2; padding: 5px;">メールアドレス</th>
-    <td style="padding: 5px;"><%= current_user.email %></td>
+    <th>メールアドレス</th>
+    <td><%= current_user.email %></td>
   </tr>
 </table>
 
